@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "ca12d9ac-0c53-4bd7-9a48-38b32f93c644",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4854169",
+		"_collection_link": "https://martian-eclipse-265179.postman.co/workspace/js-test~ffd5fdb3-4772-4611-a0aa-315c33a89845/collection/4854169-ca12d9ac-0c53-4bd7-9a48-38b32f93c644?action=share&source=collection_link&creator=4854169"
+	},
+	"item": [
+		{
+			"name": "Fetch all posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzU4ODI3MDgxLCJleHAiOjE3NTg4MzA2ODEsIm5iZiI6MTc1ODgyNzA4MSwianRpIjoiZml5VHdNM2RIaVNrS3R2ViIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.SxVD8GZavhfiFGw3uoEgrAVvNJmuNGDklK0AQ2IPMJk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch one posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzU4ODI3MDgxLCJleHAiOjE3NTg4MzA2ODEsIm5iZiI6MTc1ODgyNzA4MSwianRpIjoiZml5VHdNM2RIaVNrS3R2ViIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.SxVD8GZavhfiFGw3uoEgrAVvNJmuNGDklK0AQ2IPMJk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/posts?idPost=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "idPost",
+							"value": "2",
+							"description": "required"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit likes for posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzU4ODIzNDM0LCJleHAiOjE3NTg4MjcwMzQsIm5iZiI6MTc1ODgyMzQzNCwianRpIjoiWm1IOHgzM1dlZmJDRTVKUCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.6tZvLdE6mC4XXWWv0dD3n_v-sG4y4Pub4kTzshzrXrI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts/1/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"1",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit comments for posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzU4ODI3MDgxLCJleHAiOjE3NTg4MzA2ODEsIm5iZiI6MTc1ODgyNzA4MSwianRpIjoiZml5VHdNM2RIaVNrS3R2ViIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.SxVD8GZavhfiFGw3uoEgrAVvNJmuNGDklK0AQ2IPMJk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comments\": \"gaje\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts/1/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
