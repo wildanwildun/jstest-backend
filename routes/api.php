@@ -18,4 +18,5 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/posts', [PostController::class, 'index']);
     Route::post('/posts/{post}/like', [LikeController::class, 'toggleLike']);
     Route::post('/posts/{postId}/comments', [CommentController::class, 'store']);
+    Route::post('/comments/{id}/like', [CommentController::class, 'like']);
 });

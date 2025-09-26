@@ -25,5 +25,22 @@ class CommentController extends Controller
             'comment' => $comment->load('user'),
         ], 201);
     }
+
+    public function like($id)
+    {
+        $comment = Comment::findOrFail($id);
+        $userId = auth()->id();
+
+        $existing = $comment->likes()->where('user_id', $userId)->first();
+
+        if ($existing) {
+            $existing->delete();
+            return response()->json(['message' => 'Unliked']);
+        } else {
+            $comment->likes()->create(['user_id' => $userId]);
+            return response()->json(['message' => 'Liked']);
+        }
+    }
+
 }
 

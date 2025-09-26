@@ -32,7 +32,13 @@ class PostController extends Controller
     {
         $search = $request->query('search');
         $idPost = $request->query('idPost') ?? '';
-        $posts = Post::with(['user:id,name,email', 'comments'])
+        $posts = Post::with([
+                'user:id,name,email',
+                'comments.user:id,name',
+                'comments' => function ($q) {
+                    $q->withCount('likes');
+                }
+            ])
             ->withCount('likes')
             ->when($search, fn($q) => $q->where(function ($s) use ($search) {
                 $s->where('title', 'like', "%$search%")
